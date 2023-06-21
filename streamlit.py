@@ -5,16 +5,11 @@ from Processing import Processor
 
 data_path = r'D:\BitBucket\Practice-Data-Science\Wine quality\winequality-red.csv'
 data_instance = Processor(data_path=data_path, target_column='quality')
-st.write('''
-# Predict wine quality
-
-This app predicts **wine quality**!
-''')
-#
+st.title("Predict wine quality!")
 st.sidebar.header('User input features')
 # Collect user input features into dataframe
 upload_file = st.sidebar.file_uploader('Upload your file here')
-if upload_file:
+if upload_file is not None:
     input_df = pd.read_csv(upload_file)
 else:
     def user_input_features():
