@@ -1,5 +1,5 @@
 category_encoders==2.6.0
-numpy==1.23.5
+numpy==1.21.6
 pandas==1.5.3
 polars==0.18.3
 scikit_learn==1.2.2
