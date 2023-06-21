@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 from Processing import Processor
 
-data_path = r'D:\BitBucket\Practice-Data-Science\Wine quality\winequality-red.csv'
+data_path = 'winequality-red.csv'
 data_instance = Processor(data_path=data_path, target_column='quality')
 st.title("Predict wine quality!")
 st.sidebar.header('User input features')
