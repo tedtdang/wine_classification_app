@@ -1,0 +1,9 @@
+env:
+  - PYTHON_VERSION=3.7
+
+build:
+  - pip install -r requirements.txt
+  - streamlit run streamlit.py
+
+post_build:
+  - pip install streamlit
