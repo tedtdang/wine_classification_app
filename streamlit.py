@@ -14,7 +14,6 @@ This app predicts **wine quality**!
 st.sidebar.header('User input features')
 # Collect user input features into dataframe
 upload_file = st.sidebar.file_uploader('Upload your file here')
-upload_file = None
 if upload_file:
     input_df = pd.read_csv(upload_file)
 else:
@@ -24,9 +23,9 @@ else:
         for col in data_instance.X.columns:
             if col in data_instance.num_cols:
                 # Calculate the critical values
-                q1 = data_instance.df[col].quantile(0.25)
-                median = data_instance.df[col].quantile(0.5)
-                q3 = data_instance.df[col].quantile(0.75)
+                q1 = float(data_instance.df[col].quantile(0.25))
+                median = float(data_instance.df[col].quantile(0.5))
+                q3 = float(data_instance.df[col].quantile(0.75))
                 iqr = q3 - q1
                 upper_whisker = q3 + 1.5 * iqr
                 lower_whisker = q1 - 1.5 * iqr
@@ -58,4 +57,4 @@ prediction_proba = pd.DataFrame(model.predict_proba(input_df_transformed), colum
 st.subheader('Prediction')
 st.write(f'Predicted value: {y_pred[0]}')
 st.subheader('Prediction probability')
-st.write((prediction_proba))
+st.write(prediction_proba)

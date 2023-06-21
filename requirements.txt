@@ -1,6 +1,5 @@
 category_encoders==2.6.1
 numpy==1.25.0
 pandas==2.0.2
-polars==0.18.3
 scikit_learn==1.2.2
 typeguard==4.0.0
